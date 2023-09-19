@@ -1,0 +1,747 @@
+<?xml version="1.0" encoding="utf-8"?>
+<robot
+  name="test1">
+  <link name="dummy_link">
+    <!-- Define visual and collision properties for the dummy link if needed -->
+  </link>
+  <joint name="dummy_joint" type="fixed">
+    <parent link="dummy_link"/>
+    <child link="base_link"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <axis xyz="0 0 1"/>
+  </joint>
+  <link
+    name="base_link">
+    <inertial>
+      <origin
+        xyz="-0.061219 -0.0080212 0.075293"
+        rpy="0 0 0" />
+      <mass
+        value="2.5656" />
+      <inertia
+        ixx="0.0018375"
+        ixy="8.8608E-05"
+        ixz="5.6437E-05"
+        iyy="0.001711"
+        iyz="-8.7187E-06"
+        izz="0.0025966" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/base_link.STL" />
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/base_link.STL" />
+      </geometry>
+    </collision>
+  </link>
+  <link
+    name="fr_active_wheel_link">
+    <inertial>
+      <origin
+        xyz="-0.02029 0 -0.01277"
+        rpy="0 0 0" />
+      <mass
+        value="0.08718" />
+      <inertia
+        ixx="58080.66E-09"
+        ixy="14.75E-09"
+        ixz="40833.35E-09"
+        iyy="124902.35E-09"
+        iyz="12.44E-09"
+        izz="82087.29E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/fr_active_wheel.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/fr_active_wheel.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_active_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.1125 -0.1125 0.05"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="fr_active_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="rr_active_wheel_link">
+    <inertial>
+      <origin
+        xyz="-0.02029 0 -0.01277"
+        rpy="0 0 0" />
+      <mass
+        value="0.08718" />
+      <inertia
+        ixx="58080.66E-09"
+        ixy="14.75E-09"
+        ixz="40833.35E-09"
+        iyy="124902.35E-09"
+        iyz="12.44E-09"
+        izz="82087.29E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/rr_active_wheel.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/rr_active_wheel.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rr_active_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.1125 -0.1125 0.05"
+      rpy="0 0 -1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="rr_active_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="fl_active_wheel_link">
+    <inertial>
+      <origin
+        xyz="-0.02029 0 -0.01277"
+        rpy="0 0 0" />
+      <mass
+        value="0.08718" />
+      <inertia
+        ixx="58080.66E-09"
+        ixy="14.75E-09"
+        ixz="40833.35E-09"
+        iyy="124902.35E-09"
+        iyz="12.44E-09"
+        izz="82087.29E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/fl_active_wheel.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/fl_active_wheel.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_active_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0.1125 0.1125 0.05"
+      rpy="0 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="fl_active_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="rl_active_wheel_link">
+    <inertial>
+      <origin
+        xyz="-0.02029 0 -0.01277"
+        rpy="0 0 0" />
+      <mass
+        value="0.08718" />
+      <inertia
+        ixx="58080.66E-09"
+        ixy="14.75E-09"
+        ixz="40833.35E-09"
+        iyy="124902.35E-09"
+        iyz="12.44E-09"
+        izz="82087.29E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/rl_active_wheel.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/rl_active_wheel.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rl_active_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="-0.1125 0.1125 0.05"
+      rpy="0 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="rl_active_wheel_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="right_propellers_link">
+    <inertial>
+      <origin
+        xyz="0 0 0.00031"
+        rpy="0 0 0" />
+      <mass
+        value="0.03192" />
+      <inertia
+        ixx="39032.62E-09"
+        ixy="0.23E-09"
+        ixz="-0.02E-09"
+        iyy="39032.49E-09"
+        iyz="-0.02E-09"
+        izz="17063.74E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/right_propellers.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/right_propellers.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="right_propellers_joint"
+    type="continuous">
+    <origin
+      xyz="0 -0.1898 0.09994"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="right_propellers_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="left_propellers_link">
+    <inertial>
+      <origin
+        xyz="0 0 0.00031"
+        rpy="0 0 0" />
+      <mass
+        value="0.03192" />
+      <inertia
+        ixx="39032.62E-09"
+        ixy="0.23E-09"
+        ixz="-0.02E-09"
+        iyy="39032.49E-09"
+        iyz="-0.02E-09"
+        izz="17063.74E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/left_propellers.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/left_propellers.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="left_propellers_joint"
+    type="continuous">
+    <origin
+      xyz="0 0.1898 0.09994"
+      rpy="1.5708 0 1.5708" />
+    <parent
+      link="base_link" />
+    <child
+      link="left_propellers_link" />
+    <axis
+      xyz="0 0 1" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="adhesion_propeller_link">
+    <inertial>
+      <origin
+        xyz="0 -0.001707 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.02372" />
+      <inertia
+        ixx="10829.10E-09"
+        ixy="0.00"
+        ixz="0.00"
+        iyy="3502.35E-09"
+        iyz="0.00"
+        izz="10829.10E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/adhesion_propeller.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/adhesion_propeller.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="adhesion_propeller_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 0.02752"
+      rpy="-1.5708 0 0" />
+    <parent
+      link="base_link" />
+    <child
+      link="adhesion_propeller_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="fl_wheel_link">
+    <inertial>
+      <origin
+        xyz="0 -0.00153 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.04390" />
+      <inertia
+        ixx="9408.90E-09"
+        ixy="6.98E-09"
+        ixz="-0.14E-09"
+        iyy="14079.84E-09"
+        iyz="-0.54E-09"
+        izz="9436.08E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/fl_wheel.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/fl_wheel.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fl_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.03525"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="fl_active_wheel_link" />
+    <child
+      link="fl_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="rl_wheel_link">
+    <inertial>
+      <origin
+        xyz="0 -0.00153 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.04390" />
+      <inertia
+        ixx="9408.90E-09"
+        ixy="6.98E-09"
+        ixz="-0.14E-09"
+        iyy="14079.84E-09"
+        iyz="-0.54E-09"
+        izz="9436.08E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/rl_wheel.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/rl_wheel.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rl_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.03525"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="rl_active_wheel_link" />
+    <child
+      link="rl_wheel_link" />
+    <axis
+      xyz="0 1 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="fr_wheel_link">
+    <inertial>
+      <origin
+        xyz="0 -0.00153 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.04390" />
+      <inertia
+        ixx="9408.90E-09"
+        ixy="6.98E-09"
+        ixz="-0.14E-09"
+        iyy="14079.84E-09"
+        iyz="-0.54E-09"
+        izz="9436.08E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/fr_wheel.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/fr_wheel.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="fr_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.03525"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="fr_active_wheel_link" />
+    <child
+      link="fr_wheel_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <link
+    name="rr_wheel_link">
+    <inertial>
+      <origin
+        xyz="0 -0.00153 0"
+        rpy="0 0 0" />
+      <mass
+        value="0.04390" />
+      <inertia
+        ixx="9408.90E-09"
+        ixy="6.98E-09"
+        ixz="-0.14E-09"
+        iyy="14079.84E-09"
+        iyz="-0.54E-09"
+        izz="9436.08E-09" />
+    </inertial>
+    <visual>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/rr_wheel.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+      <material
+        name="">
+        <color
+          rgba="0.75294 0.75294 0.75294 1" />
+      </material>
+    </visual>
+    <collision>
+      <origin
+        xyz="0 0 0"
+        rpy="0 0 0" />
+      <geometry>
+        <mesh
+          filename="package://test1/meshes/rr_wheel.STL" scale="0.001 0.001 0.001"/>
+      </geometry>
+    </collision>
+  </link>
+  <joint
+    name="rr_wheel_joint"
+    type="continuous">
+    <origin
+      xyz="0 0 -0.03525"
+      rpy="3.1416 0 1.5708" />
+    <parent
+      link="rr_active_wheel_link" />
+    <child
+      link="rr_wheel_link" />
+    <axis
+      xyz="0 -1 0" />
+    <limit
+      effort="100"
+      velocity="100" />
+    <dynamics
+      damping="0.1"
+      friction="0.1" />
+  </joint>
+  <gazebo>
+    <plugin name="skid_steer_drive_controller" filename="libgazebo_ros_skid_steer_drive.so">
+      <updateRate>100.0</updateRate>
+      <robotNamespace>/</robotNamespace>
+      <leftFrontJoint>fl_wheel_joint</leftFrontJoint>
+      <rightFrontJoint>fr_wheel_joint</rightFrontJoint>
+      <leftRearJoint>rl_wheel_joint</leftRearJoint>
+      <rightRearJoint>rr_wheel_joint</rightRearJoint>
+      <wheelSeparation>0.4</wheelSeparation>
+      <wheelDiameter>0.215</wheelDiameter>
+      <robotBaseFrame>base_link</robotBaseFrame>
+      <torque>20</torque>
+      <topicName>cmd_vel</topicName>
+      <broadcastTF>false</broadcastTF>
+    </plugin>
+    <plugin name="example" filename="libusv_gazebo_thrust_plugin.so">
+      <cmdTimeout>1.0</cmdTimeout>
+      <thruster>
+        <linkName>left_propellers_link</linkName>
+        <propJointName>left_propellers_joint</propJointName>
+        <engineJointName>left_propellers_joint</engineJointName>
+        <cmdTopic>left_thrust_cmd</cmdTopic>
+        <angleTopic>left_thrust_angle</angleTopic>
+        <enableAngle>false</enableAngle>
+        <mappingType>1</mappingType>
+        <maxCmd>1.0</maxCmd>
+        <maxForceFwd>250.0</maxForceFwd>
+        <maxForceRev>-100.0</maxForceRev>
+        <maxAngle>1.57</maxAngle>
+      </thruster>
+      <thruster>
+        <linkName>right_propellers_link</linkName>
+        <propJointName>right_propellers_joint</propJointName>
+        <engineJointName>right_propellers_joint</engineJointName>
+        <cmdTopic>right_thrust_cmd</cmdTopic>
+        <angleTopic>right_thrust_angle</angleTopic>
+        <enableAngle>false</enableAngle>
+        <mappingType>1</mappingType>
+        <maxCmd>1.0</maxCmd>
+        <maxForceFwd>250.0</maxForceFwd>
+        <maxForceRev>-100.0</maxForceRev>
+        <maxAngle>1.57</maxAngle>
+      </thruster>
+    </plugin>
+  </gazebo>    
+</robot>
